@@ -9,10 +9,19 @@
 <div class="wrap">
     <div class="masthead">
         <div class="container">
-            <h3 class="masthead-title">
-                <a href="/" title="Home">{{ site.name }}</a>
-                <small>{{ site.description }}</small>
-            </h3>
+            <div class="masthead-title">
+                <a href="/" title="Home">
+                    <div>
+                        {{% if site.thumbnail %}}
+                        <img src="{{ site.thumbnail }}" alt="thumbnail">
+                        {{% endif %}}
+                        {{ site.name }}
+                    </div>
+                </a>
+                <p>
+                    <small>{{ site.description }}</small>
+                </p>
+            </div>
         </div>
     </div>
 

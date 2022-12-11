@@ -1,0 +1,32 @@
+---
+layout: default
+og:
+image: 'my-photo.png'
+type: 'image/jpeg'
+width: '400'
+height: '400'
+---
+
+<div id="home">
+    <ul class="main-list">
+        {% for post in site.posts %}
+        {% if post.layout != "none" %}
+        <a href="{{ post.url }}">
+            <li class="main-list-item">
+                <div class="main-list-item__image">
+                    {% if post.thumbnail %}
+                    <img src="{{ post.thumbnail }}" alt="thumbnail">
+                    {% else %}
+                    <img src="/images/no_image.png" alt="thumbnail">
+                    {% endif %}
+                </div>
+                <div class="main-list-item__content">
+                    <h4>{{ post.title }}</h4>
+                    <p>{{ post.date | date: "%B %d, %Y" }}</p>
+                </div>
+            </li>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>

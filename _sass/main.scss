@@ -227,3 +227,49 @@ img[src$='#collector-coverage'] {
   display: inline;
   margin: 0 1px -3px 0;
 }
+
+
+/* List component */
+.main-list{
+  margin: 0;
+  padding: 15px;
+  border-radius: 2px;
+  border-top: 1px solid #eee;
+}
+
+.main-list .main-list-item{
+  display: flex;
+  padding: 10px 5px;
+}
+.main-list .main-list-item:not(:last-child){
+  border-bottom: 1px solid #EEE;
+}
+
+/*list item image wrapper*/
+.main-list .main-list-item__image{
+  flex-shrink: 0;
+  height: 80px;
+}
+.main-list .main-list-item__image img{
+  border-radius: 10%;
+  width: 70px;
+  height: 70px;
+}
+
+/*list item content*/
+.main-list .main-list-item__content{
+  flex-grow: 1;
+  padding: 0 20px;
+}
+.main-list .main-list-item__content h4{
+  margin: 0;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.main-list .main-list-item__content p{
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 10px;
+  color: gray;
+}

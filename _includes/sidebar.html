@@ -4,10 +4,7 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-    <div class="sidebar-item">
-        <p>{{ site.description }}</p>
-    </div>
-
+    <br/>
     <nav class="sidebar-nav">
         <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="/">Home</a>
 
@@ -27,13 +24,9 @@
 
     </nav>
 
-    <div class="sidebar-item">
-        <p>
-            Software Engineer
-        </p>
+    <div class="sidebar-item sidebar-bottom">
         <p class="social-icons">
-            <a href="mailto:wondershine.one@gmail.com"><i class="fas fa-envelope fa-2x"></i></a>
-            <a href="https://github.com/wondershineone"><i class="fab fa-github fa-2x"></i></a>
+            <a href="mailto:{{ site.mail }}"><i class="fas fa-envelope fa-2x"></i></a>
             <a href="/feed.xml"><i class="fa fa-rss fa-2x"></i></a>
         </p>
         <p>
