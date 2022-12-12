@@ -131,7 +131,7 @@ div{
 
 .masthead {
   padding-top:    2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 .masthead-title {
   margin-top: 0;
@@ -159,9 +159,9 @@ div{
   .masthead-title {
     text-align: center;
   }
-  .masthead-title small {
-    display: none;
-  }
+  //.masthead-title small {
+  //  display: none;
+  //}
 }
 
 
