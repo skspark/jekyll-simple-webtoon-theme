@@ -213,6 +213,7 @@ img[src$='#collector-coverage'] {
 }
 .main-list .main-list-item__image img{
   border-radius: 10%;
+  object-fit: cover;
   width: 70px;
   height: 70px;
 }

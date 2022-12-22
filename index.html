@@ -50,7 +50,7 @@ height: '400'
             {% endif %}
             {% endfor %}
         </ul>
-        <ul id="posts-sub" class="main-list">
+        <ul id="posts-sub" class="main-list hide">
             {% for post in site.posts %}
             {% if post.layout != "none" and post.categories contains "sub" %}
             <a href="{{ post.url }}">
