@@ -6,54 +6,70 @@ type: 'image/jpeg'
 width: '400'
 height: '400'
 ---
-
+<div class="masthead">
+    <div class="container">
+        <div class="masthead-title">
+            <a href="/" title="Home">
+                <div>
+                    <img src="{{ site.thumbnail }}" alt="thumbnail">
+                    {{ site.name }}
+                </div>
+            </a>
+            <p>
+                <small>{{ site.description }}</small>
+            </p>
+        </div>
+    </div>
+</div>
 <div id="home">
     <div class="topnav">
-        <ul>
-            <li><a href="#">ALL</a></li>
-            <li><a href="#">SUB</a></li>
+        <ul id="home-top-nav">
+            <li data-tabs="posts" data-tab="posts-all"><a href="#">ALL</a></li>
+            <li data-tabs="posts" data-tab="posts-sub"><a href="#">SUB</a></li>
         </ul>
     </div>
-    <ul class="main-list">
-    {% for post in site.posts %}
-    {% if post.layout != "none" %}
-        <a href="{{ post.url }}">
-            <li class="main-list-item">
-                <div class="main-list-item__image">
-                    {% if post.thumbnail %}
-                    <img src="{{ post.thumbnail }}" alt="thumbnail">
-                    {% else %}
-                    <img src="/images/no_image.png" alt="thumbnail">
-                    {% endif %}
-                </div>
-                <div class="main-list-item__content">
-                    <h4>{{ post.title }}</h4>
-                    <p>{{ post.date | date: "%B %d, %Y" }}</p>
-                </div>
-            </li>
-        </a>
-    {% endif %}
-    {% endfor %}
-    </ul>
-    <ul class="main-list">
-    {% for post in site.posts %}
-    {% if post.layout != "none" and post.categories contains "sub" %}
-        <a href="{{ post.url }}">
-            <li class="main-list-item">
-                <div class="main-list-item__image">
-                    {% if post.thumbnail %}
-                    <img src="{{ post.thumbnail }}" alt="thumbnail">
-                    {% else %}
-                    <img src="/images/no_image.png" alt="thumbnail">
-                    {% endif %}
-                </div>
-                <div class="main-list-item__content">
-                    <h4>{{ post.title }}</h4>
-                    <p>{{ post.date | date: "%B %d, %Y" }}</p>
-                </div>
-            </li>
-        </a>
-    {% endif %}
-    {% endfor %}
-    </ul>
+    <div id="posts">
+        <ul id="posts-all" class="main-list">
+            {% for post in site.posts %}
+            {% if post.layout != "none" %}
+            <a href="{{ post.url }}">
+                <li class="main-list-item">
+                    <div class="main-list-item__image">
+                        {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail }}" alt="thumbnail">
+                        {% else %}
+                        <img src="/images/no_image.png" alt="thumbnail">
+                        {% endif %}
+                    </div>
+                    <div class="main-list-item__content">
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+                    </div>
+                </li>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul id="posts-sub" class="main-list">
+            {% for post in site.posts %}
+            {% if post.layout != "none" and post.categories contains "sub" %}
+            <a href="{{ post.url }}">
+                <li class="main-list-item">
+                    <div class="main-list-item__image">
+                        {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail }}" alt="thumbnail">
+                        {% else %}
+                        <img src="/images/no_image.png" alt="thumbnail">
+                        {% endif %}
+                    </div>
+                    <div class="main-list-item__content">
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+                    </div>
+                </li>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </div>
